@@ -1,19 +1,36 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
+const primary = colors.indigo;
+const secondary = colors.pink;
+const info = colors.sky;
+const warning = colors.amber;
+const success = colors.emerald;
+const error = colors.red;
+
 module.exports = {
-  mode: "jit",
+  mode: 'jit',
   content: [
-    "./assets/**/*.{css}",
-    "./components/*.{vue,js}",
-    "./components/**/*.{vue,js}",
-    "./layouts/*.{vue,js}",
-    "./layouts/**/*.{vue,js}",
-    "./pages/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./*.{vue,js,ts}",
-    "./nuxt.config.{js,ts}",
+    './assets/**/*.{vue,js,css}',
+    './components/**/*.{vue,js}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary,
+        secondary,
+        info,
+        warning,
+        success,
+        error,
+      },
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   variants: {
     extend: {},
